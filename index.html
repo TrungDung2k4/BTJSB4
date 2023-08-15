@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài Tập DOM</title>
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="./index.css" />
+  <body>
+    <!-- Bài 1 -->
+    <div class="exercise text-center mx-auto mt-5">
+      <h2 class="mb-4">Quản Lý Tuyển Sinh</h2>
+      <div class="row mb-4">
+        <div class="col-4">
+          <input
+            type="text"
+            class="form-control text-center exercise__item"
+            placeholder="Điểm Chuẩn"
+            id="standardPoint"
+          />
+        </div>
+        <div class="col-4">
+          <select class="custom-select text-center" id="region">
+            <option selected>Chọn Khu Vực</option>
+            <option value="X">Không Thuộc Khu Vực Ưu Tiên</option>
+            <option value="A">Khu Vực Ưu Tiên A</option>
+            <option value="B">Khu Vực Ưu Tiên B</option>
+            <option value="C">Khu Vực Ưu Tiên C</option>
+          </select>
+        </div>
+        <div class="col-4">
+          <select class="custom-select text-center" id="candidateType">
+            <option selected>Chọn Đối Tượng</option>
+            <option value="0">Không Thuộc Đối Tượng Ưu Tiên</option>
+            <option value="1">Đối Tượng Ưu Tiên 1</option>
+            <option value="2">Đối Tượng Ưu Tiên 2</option>
+            <option value="3">Đối Tượng Ưu Tiên 3</option>
+          </select>
+        </div>
+        <div class="col-4 mt-4">
+          <input
+            type="text"
+            class="form-control text-center exercise__item"
+            placeholder="Điểm Môn Thứ 1"
+            id="point1"
+          />
+        </div>
+        <div class="col-4 mt-4">
+          <input
+            type="text"
+            class="form-control text-center exercise__item"
+            placeholder="Điểm Môn Thứ 2"
+            id="point2"
+          />
+        </div>
+        <div class="col-4 mt-4">
+          <input
+            type="text"
+            class="form-control text-center exercise__item"
+            placeholder="Điểm Môn Thứ 3"
+            id="point3"
+          />
+        </div>
+      </div>
+      <button id="decide">Kết Quả</button>
+      <div class="result exercise__item" id="decision"></div>
+    </div>
+    <!-- Bài 2 -->
+    <div class="exercise text-center mx-auto mt-5">
+      <h2>Tính Tiền Điện</h2>
+      <div class="row mb-4">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control text-center exercise__item"
+            placeholder="Họ Và Tên"
+            id="fullname"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control text-center exercise__item"
+            placeholder="Số KW"
+            id="numberKW"
+          />
+        </div>
+      </div>
+      <button id="calculateKW">Tính Tiền Điện</button>
+      <div class="result exercise__item" id="paymentKW"></div>
+    </div>
+    <!-- Bài 3 -->
+    <div class="exercise text-center mx-auto mt-5">
+      <h2 class="mb-4">Tính Thuế Thu Nhập Cá Nhân</h2>
+      <div class="row mb-4">
+        <div class="col">
+          <input
+            type="text"
+            class="form-control text-center exercise__item"
+            placeholder="Họ Tên"
+            id="fullName"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control text-center exercise__item"
+            placeholder="Tổng Thu Nhập Năm"
+            id="totalYearlyIncome"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control text-center exercise__item"
+            placeholder="Số Người Phụ Thuộc"
+            id="dependentMembers"
+          />
+        </div>
+      </div>
+      <button id="calculateTax">Tính Tiền Thuế</button>
+      <div class="result exercise__item" id="calculatedTax"></div>
+    </div>
+    <!-- Bài 4 -->
+    <div class="exercise text-center mx-auto mt-5">
+      <h2 class="mb-4">Tính Tiền Cáp</h2>
+      <div class="row mb-4">
+        <div class="col-4">
+          <select
+            class="custom-select text-center"
+            id="customerType"
+            onchange="showConnectionNumbers()"
+          >
+            <option selected>Loại Khách Hàng</option>
+            <option value="H">Nhà Dân</option>
+            <option value="B">Doanh Nghiệp</option>
+          </select>
+        </div>
+        <div class="col-4">
+          <input
+            type="text"
+            class="form-control text-center exercise__item"
+            placeholder="Mã Khách Hàng"
+            id="customerID"
+          />
+        </div>
+        <div class="col-4">
+          <input
+            type="text"
+            class="form-control text-center exercise__item"
+            placeholder="Số Kênh Cao Cấp"
+            id="premiumChannels"
+          />
+        </div>
+        <div class="col-4">
+          <input
+            type="text"
+            class="form-control text-center exercise__item"
+            placeholder="Số Kết Nối"
+            id="connectionNumbers"
+          />
+        </div>
+      </div>
+      <button id="calculateTVPayment">Tính Tiền Cáp</button>
+      <div class="result exercise__item" id="calculatedTVPayment"></div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

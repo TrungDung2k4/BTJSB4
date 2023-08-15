@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.exercise {
+  width: 80%;
+  background-image: linear-gradient(
+    to right,
+    #f55f8d 0,
+    #f8ae56 50%,
+    #f55f8d 100%
+  );
+  background-size: 200%;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 1px 5px 7.5px rgba(14, 13, 13, 0.2);
+}
+.result {
+  height: 40px;
+  background-color: white;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 40px;
+}
+.exercise button {
+  line-height: 52px;
+  font-weight: 700;
+  padding: 0px 30px;
+  border: none;
+  background-color: DarkTurquoise;
+  transition: all 0.5s;
+  border-radius: 5px;
+}
+.exercise button:hover {
+  background-color: DeepSkyBlue;
+  color: white;
+}
+.exercise__item {
+  box-shadow: 1px 5px 7.5px rgba(14, 13, 13, 0.2);
+}
+#connectionNumbers {
+  display: none;
+}
